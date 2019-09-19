@@ -6,5 +6,6 @@ func main() {
 	for i := 0; i < 3; i++ {
 		fmt.Println("I like Go!")
 	}
-	fmt.Println(profile())
+	age, name := profile()
+	fmt.Println(name, age)
 }
