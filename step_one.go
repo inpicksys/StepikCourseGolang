@@ -10,5 +10,6 @@ func main() {
 	//fmt.Println(name, age)
 	//a := stepOneExtendedWork()
 	//fmt.Println(a)
-	fmt.Println(squarer())
+	//fmt.Println(squarer())
+	fmt.Println(last_digit())
 }
