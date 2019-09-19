@@ -11,5 +11,6 @@ func main() {
 	//a := stepOneExtendedWork()
 	//fmt.Println(a)
 	//fmt.Println(squarer())
-	fmt.Println(last_digit())
+	//fmt.Println(last_digit())
+	fmt.Println(pre_last_digit())
 }

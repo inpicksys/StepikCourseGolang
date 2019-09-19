@@ -26,3 +26,8 @@ func last_digit() int {
 }
 
 //TODO Дано неотрицательное целое число. Найдите число десятков (то есть вторую цифру справа)
+func pre_last_digit() uint {
+	var a uint
+	fmt.Scan(&a)
+	return (a / 10) % 10
+}
