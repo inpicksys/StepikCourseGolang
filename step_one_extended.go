@@ -14,3 +14,8 @@ func stepOneExtendedWork() int {
 }
 
 //TODO вывести квадрат данного числа
+func squarer() int {
+	var a int
+	fmt.Scan(&a)
+	return a * a
+}

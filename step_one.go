@@ -8,6 +8,7 @@ func main() {
 	//}
 	//age, name := profile()
 	//fmt.Println(name, age)
-	a := stepOneExtendedWork()
-	fmt.Println(a)
+	//a := stepOneExtendedWork()
+	//fmt.Println(a)
+	fmt.Println(squarer())
 }
