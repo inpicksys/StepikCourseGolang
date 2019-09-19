@@ -19,3 +19,5 @@ func squarer() int {
 	fmt.Scan(&a)
 	return a * a
 }
+
+//TODO Дано натуральное число, выведите его последнюю цифру.
