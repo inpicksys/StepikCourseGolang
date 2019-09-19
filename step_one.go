@@ -12,5 +12,7 @@ func main() {
 	//fmt.Println(a)
 	//fmt.Println(squarer())
 	//fmt.Println(last_digit())
-	fmt.Println(pre_last_digit())
+	//fmt.Println(pre_last_digit())
+	var h, m int = clockReader()
+	fmt.Print("It is ", h, " hours ", m, " minutes.")
 }
