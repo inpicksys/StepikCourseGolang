@@ -5,6 +5,7 @@ package main
 import "fmt"
 
 func sameDigits() {
+	// Не проходит тест по числу 121
 	var a int
 	fmt.Scan(&a)
 	if (a%10) != (a%100/10) && (a%10) != (a%1000/100/10) && (a%100/10) != (a%1000/100/10) {
