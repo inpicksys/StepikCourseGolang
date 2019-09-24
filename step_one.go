@@ -15,6 +15,7 @@ func main() {
 		var h, m int = clockReader()
 		fmt.Print("It is ", h, " hours ", m, " minutes.")
 		some_func()
+		if_example()
 	*/
-	if_example()
+	sameDigits()
 }
