@@ -19,14 +19,14 @@ func squarer() int {
 }
 
 //TODO Дано натуральное число, выведите его последнюю цифру.
-func last_digit() int {
+func lastDigit() int {
 	var a int
 	fmt.Scan(&a)
 	return a % 10
 }
 
 //TODO Дано неотрицательное целое число. Найдите число десятков (то есть вторую цифру справа)
-func pre_last_digit() uint {
+func preLastDigit() uint {
 	var a uint
 	fmt.Scan(&a)
 	return (a / 10) % 10
