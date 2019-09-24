@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 	//for i := 0; i < 3; i++ {
 	//	fmt.Println("I like Go!")
@@ -13,6 +11,7 @@ func main() {
 	//fmt.Println(squarer())
 	//fmt.Println(last_digit())
 	//fmt.Println(pre_last_digit())
-	var h, m int = clockReader()
-	fmt.Print("It is ", h, " hours ", m, " minutes.")
+	//var h, m int = clockReader()
+	//fmt.Print("It is ", h, " hours ", m, " minutes.")
+	some_func()
 }
