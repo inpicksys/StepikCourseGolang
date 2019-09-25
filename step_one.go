@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	/*
 		for i := 0; i < 3; i++ {
@@ -16,6 +18,7 @@ func main() {
 		fmt.Print("It is ", h, " hours ", m, " minutes.")
 		some_func()
 		if_example()
+		sameDigits()
 	*/
-	sameDigits()
+	fmt.Println(firstDigit())
 }
