@@ -19,6 +19,11 @@ func main() {
 		some_func()
 		if_example()
 		sameDigits()
+		fmt.Println(firstDigit())
 	*/
-	fmt.Println(firstDigit())
+	if luckyTicket() {
+		fmt.Println("YES")
+	} else {
+		fmt.Println("NO")
+	}
 }
