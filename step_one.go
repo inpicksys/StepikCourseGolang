@@ -3,5 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println(equalsMaxCounter())
+	a := findTheDigit()
+	if a != 0 {
+		fmt.Print(a)
+	}
 }
