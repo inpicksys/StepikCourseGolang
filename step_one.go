@@ -5,5 +5,5 @@ import "fmt"
 func main() {
 	var x uint
 	fmt.Scan(&x)
-	fmt.Println(arrFourthElement(x))
+	evenNumbersFromArray(x)
 }
