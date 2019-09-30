@@ -12,12 +12,10 @@ func sumOfDigits(data uint) uint {
 }
 
 //TODO Дано трехзначное число. Переверните его, а затем выведите.
-func reshaperThreeDigits(data uint) uint {
-	var i, result uint
-	for i = 1000; i >= 10; i /= 10 {
-		result += data % i
+func reshaperThreeDigits(data int) {
+	for i := 10; i <= 1000; i *= 10 {
+		fmt.Print(data % i / (i / 10))
 	}
-	return result
 }
 
 //TODO Идёт k-я секунда суток. Определите, сколько целых часов h и целых минут m прошло с начала суток. Например, если
