@@ -19,6 +19,12 @@ func reshaperThreeDigits(data int) {
 }
 
 //TODO Идёт k-я секунда суток. Определите, сколько целых часов h и целых минут m прошло с начала суток. Например, если
+func clockExtReader(k uint) {
+	var hours, minutes uint
+	hours = k / 3600
+	minutes = (k - hours*3600) / 60
+	fmt.Printf("It is %d hours %d minutes.", hours, minutes)
+}
 
 //TODO Заданы три числа - a,b,c(a<b<c) - длины сторон треугольника. Нужно проверить, является ли треугольник прямоугольным. Если является, вывести "Прямоугольный". Иначе вывести "Не прямоугольный"
 func is90Triangle(a, b, c uint) {
@@ -31,10 +37,17 @@ func is90Triangle(a, b, c uint) {
 
 //TODO Даны три натуральных числа a, b, c. Определите, существует ли треугольник с такими сторонами.
 func isTriangle(a, b, c uint) {
-
+	if a+b > c && a+c > b && b+c > a {
+		fmt.Println("Существует")
+	} else {
+		fmt.Println("Не существует")
+	}
 }
 
 //TODO Даны два числа. Найти их среднее арифметическое.
+func middleValue(a, b float32) float32 {
+	return (a + b) / 2.0
+}
 
 //TODO По данным числам, определите количество чисел, которые равны нулю.
 /*
@@ -43,6 +56,17 @@ func isTriangle(a, b, c uint) {
 Выходные данные
 Выведите количество чисел, которые равны нулю.
 */
+func howManyZeroes(num uint) uint {
+	var i, counter uint
+	var element int
+	for i = 0; i < num; i++ {
+		fmt.Scan(&element)
+		if element == 0 {
+			counter++
+		}
+	}
+	return counter
+}
 
 //TODO Найдите количество минимальных элементов в последовательности.
 /*
@@ -51,12 +75,34 @@ func isTriangle(a, b, c uint) {
 Выходные данные
 Выведите количество минимальных элементов.
 */
+func minimumInTheList(num uint) uint {
+	var i, counter uint
+	var minimum, element int
+	fmt.Scan(&element)
+	minimum = element
+	counter = 1
+	for i = 0; i < num-1; i++ {
+		fmt.Scan(&element)
+		if element == minimum {
+			counter++
+		} else if element < minimum {
+			minimum = element
+			counter = 1
+		}
+	}
+	return counter
+}
 
 //TODO По данному числу определите его цифровой корень.
 /*
-Цифровой корень натурального числа — это цифра, полученная в результате итеративного процесса суммирования цифр, на каждой итерации которого для подсчета суммы цифр берут результат, полученный на предыдущей итерации. Этот процесс повторяется до тех пор, пока не будет получена одна цифра.
+Цифровой корень натурального числа — это цифра, полученная в результате итеративного процесса суммирования цифр,
+на каждой итерации которого для подсчета суммы цифр берут результат, полученный на предыдущей итерации.
+Этот процесс повторяется до тех пор, пока не будет получена одна цифра.
 Например цифровой корень 65536 это 7 , потому что 6+5+5+3+6=25 и 2+5=7 .
 */
+func digitalRoot(source uint) uint {
+
+}
 
 //TODO Найдите самое большее число на отрезке от a до b, кратное 7 .
 /*

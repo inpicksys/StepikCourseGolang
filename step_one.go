@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var x int
+	var x uint
 	fmt.Scan(&x)
+	fmt.Println(minimumInTheList(x))
 }
