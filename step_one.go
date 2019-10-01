@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var x uint
+	var x string
 	fmt.Scan(&x)
-	powersOfTwo(x)
+	addTheAsterisk(x)
 }
