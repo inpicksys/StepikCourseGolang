@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 //TODO Дано трехзначное число. Найдите сумму его цифр.
@@ -193,3 +194,7 @@ func maxInString(str string) int {
 Выходные данные
 Вывести число без заданных цифр.
 */
+func deleteThatDigit(str string, digit string) string {
+	result := strings.Replace(str, digit, "", -1)
+	return result
+}

@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	var x string
-	fmt.Scan(&x)
-	fmt.Println(maxInString(x))
+	var x, y string
+	fmt.Scan(&x, &y)
+	fmt.Println(deleteThatDigit(x, y))
 }
