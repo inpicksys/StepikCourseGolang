@@ -135,6 +135,26 @@ func dividedBy7MaxOnInterval(a, b int) int {
 Выходные данные
 Программа должна вывести введенное число n и одно из слов (на латинице): korov, korova или korovy, например, 1 korova, 2 korovy, 5 korov. Между числом и словом должен стоять ровно один пробел.
 */
+func speakLikeUkupnik(num uint) {
+	cows := ""
+	if num > 10 && num < 20 {
+		cows = "korov"
+	} else {
+		switch num % 10 {
+		case 1:
+			cows = "korova"
+		case 2:
+			cows = "korovy"
+		case 3:
+			cows = "korovy"
+		case 4:
+			cows = "korovy"
+		default:
+			cows = "korov"
+		}
+	}
+	fmt.Printf("%d %s", num, cows)
+}
 
 //TODO По данному числу N распечатайте все целые степени двойки, не превосходящие N, в порядке возрастания.
 
