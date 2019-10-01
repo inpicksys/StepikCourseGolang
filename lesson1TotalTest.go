@@ -175,6 +175,16 @@ func addTheAsterisk(str string) {
 }
 
 //TODO Дана строка, содержащая только десятичные цифры. Найти и вывести наибольшую цифру.
+func maxInString(str string) int {
+	var max, intElement int
+	for i := 0; i < len(str); i++ {
+		fmt.Sscanf(string(str[i]), "%1d", &intElement)
+		if intElement > max {
+			max = intElement
+		}
+	}
+	return max
+}
 
 //TODO Из натурального числа удалить заданную цифру.
 /*

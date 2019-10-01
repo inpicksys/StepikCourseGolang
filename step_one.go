@@ -5,5 +5,5 @@ import "fmt"
 func main() {
 	var x string
 	fmt.Scan(&x)
-	addTheAsterisk(x)
+	fmt.Println(maxInString(x))
 }
