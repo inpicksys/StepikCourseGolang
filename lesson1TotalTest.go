@@ -100,9 +100,16 @@ func minimumInTheList(num uint) uint {
 Этот процесс повторяется до тех пор, пока не будет получена одна цифра.
 Например цифровой корень 65536 это 7 , потому что 6+5+5+3+6=25 и 2+5=7 .
 */
-/*func digitalRoot(source uint) uint {
-
-}*/
+func digitalRoot(num uint) uint {
+	var result uint
+	for i := num; i > 0; i /= 10 {
+		result += i % 10
+	}
+	if result > 10 {
+		result = digitalRoot(result)
+	}
+	return result
+}
 
 //TODO Найдите самое большее число на отрезке от a до b, кратное 7 .
 /*
@@ -113,7 +120,7 @@ func minimumInTheList(num uint) uint {
 */
 func dividedBy7MaxOnInterval(a, b int) int {
 	var max = a
-	for i := a; i < b; i++ {
+	for i := a; i <= b; i++ {
 		if i%7 == 0 && max < i {
 			max = i
 		}
