@@ -1,8 +1,10 @@
-package main
+package Lesson1
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func main() {
+func Executor() {
 	var x, y string
 	fmt.Scan(&x, &y)
 	fmt.Println(deleteThatDigit(x, y))
