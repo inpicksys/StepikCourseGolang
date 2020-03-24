@@ -10,5 +10,5 @@ func Executor() {
 	//x := 4
 	//fmt.Println(fibonacci(x))
 	x, y := 2, 4
-	test2(&x, &y)
+	valueSwitcher(&x, &y)
 }
