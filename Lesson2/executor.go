@@ -1,9 +1,5 @@
 package Lesson2
 
-import (
-	"fmt"
-)
-
 func Executor() {
 	//text := "Surprise, motherfucker!"
 	//f(text)
@@ -15,10 +11,11 @@ func Executor() {
 	//fmt.Println(fibonacci(x))
 	//x, y := 2, 4
 	//valueSwitcher(&x, &y)
-	var text, result string
-	fmt.Scan(&text, &result)
+	//var text, result string
+	//fmt.Scan(&text)
 	//fmt.Println(isPerfectString(&text))
 	//fmt.Println(findSubstring(&text, &substr))
-	onlyNotEvenLetters(&text, &result)
-	fmt.Println(result)
+	//onlyNotEvenLetters(&text, &result)
+	//isAppropriatePassword(&text, &result)
+	//fmt.Println(result)
 }
