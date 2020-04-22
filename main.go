@@ -1,9 +1,9 @@
 package main
 
-import "StepikCourseGolang/Practice"
+import "StepikCourseGolang/Lesson2"
 
 func main() {
 	//Lesson1.Executor()
-	//Lesson2.Executor()
-	Practice.Executor()
+	Lesson2.Executor()
+	//Practice.Executor()
 }

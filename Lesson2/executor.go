@@ -1,5 +1,7 @@
 package Lesson2
 
+import "fmt"
+
 func Executor() {
 	//text := "Surprise, motherfucker!"
 	//f(text)
@@ -18,4 +20,6 @@ func Executor() {
 	//onlyNotEvenLetters(&text, &result)
 	//isAppropriatePassword(&text, &result)
 	//fmt.Println(result)
+	a, b := sumInt(1, 0)
+	fmt.Println(a, b)
 }
