@@ -23,27 +23,34 @@ import (
 //  6. Посчитать их частное и вернуть как результат функции
 //  7. Вывести полученное значение на стандартный вывод (точность - 4 знака после запятой)
 
-func GetQuotient(string1 *string) float32 {
-	var result float32
+func GetQuotient(string1 *string) float64 {
+	var result float64
 	r := csv.NewReader(strings.NewReader(*string1))
+	r.Comma = ';'
 	records, err := r.ReadAll()
 	if err != nil {
 		panic(err)
 	}
-	numFirstStr := strings.Join(records[0], "")
-	numSecondStr := strings.Join(records[1], "")
-	result = float32(removeNonDigitsAndConvertToFloat(&numFirstStr) / removeNonDigitsAndConvertToFloat(&numSecondStr))
+	numFirstStr := records[0][0]
+	numSecondStr := records[0][1]
+	result = removeNonDigitsAndConvertToFloat(&numFirstStr) / removeNonDigitsAndConvertToFloat(&numSecondStr)
 	return result
 }
 
-func removeNonDigitsAndConvertToFloat(s *string) (result float64) {
+func removeNonDigitsAndConvertToFloat(s *string) float64 {
 	resultStr := ""
 	strRunes := bytes.Runes([]byte(*s))
 	for i := 0; i < len(strRunes); i++ {
-		if unicode.IsDigit(strRunes[i]) {
+		if unicode.IsDigit(strRunes[i]) || unicode.Is(unicode.Punct, strRunes[i]) {
+			if unicode.Is(unicode.Punct, strRunes[i]) {
+				strRunes[i] = '.'
+			}
 			resultStr += string(strRunes[i])
 		}
 	}
-	result, _ = strconv.ParseFloat(resultStr, 64)
-	return
+	result, err := strconv.ParseFloat(resultStr, 64)
+	if err != nil {
+		panic(err)
+	}
+	return result
 }
