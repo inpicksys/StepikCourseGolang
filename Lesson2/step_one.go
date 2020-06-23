@@ -74,3 +74,29 @@ func valueSwitcher(x1, x2 *int) {
 	*x2 = temp
 	fmt.Println(*x1, *x2)
 }
+
+// TODO Вам необходимо реализовать структуру со свойствами-полями On, Ammo и Power,
+//  с типами bool, int, int соответственно. У этой структуры должны быть методы: Shoot и RideBike,
+//  которые не принимают аргументов, но возвращают значение bool.
+//  Если значение On == false, то оба метода вернут false. Делать Shoot можно только при наличии Ammo
+//  (тогда Ammo уменьшается на единицу, а метод возвращает true), если его нет, то метод вернет false.
+//  Метод RideBike работает также, но только зависит от свойства Power.
+type Robochicken struct {
+	On          bool
+	Ammo, Power int
+}
+
+func (r *Robochicken) Shoot() bool {
+	if r.On && r.Ammo > 0 {
+		r.Ammo--
+		return true
+	}
+	return false
+}
+func (r *Robochicken) RideBike() bool {
+	if r.On && r.Power > 0 {
+		r.Power--
+		return true
+	}
+	return false
+}
