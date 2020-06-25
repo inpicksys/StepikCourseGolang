@@ -1,7 +1,5 @@
 package Lesson3
 
-import "fmt"
-
 func Executor() {
 	/*
 		reader := bufio.NewReader(os.Stdin)
@@ -11,7 +9,5 @@ func Executor() {
 		}
 		fmt.Printf("%.4f", GetQuotient(&str1))
 	*/
-	var num uint
-	fmt.Scan(&num)
-	fmt.Println(Lambda(num))
+	InterfaceWork(0.0, 0.1, "+")
 }
