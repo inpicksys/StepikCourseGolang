@@ -1,12 +1,13 @@
 package main
 
 import (
-	"StepikCourseGolang/Lesson1"
+	"StepikCourseGolang/Lesson3"
 )
 
 func main() {
-	Lesson1.Executor()
+	//Lesson1.Executor()
 	//Lesson2.Executor()
 	//Practice.Executor()
 	//Lesson3.Executor()
+	Lesson3.Executor()
 }
