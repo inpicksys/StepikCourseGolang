@@ -7,6 +7,6 @@ func TestInterfaceWork2(t *testing.T) {
 	cap := "1000010011"
 	result := InterfaceWork2(cap)
 	if result != "[      XXXX]" {
-		t.Error("Wrong answer! Expected [      XXXX], got ", result)
+		t.Error("Wrong answer! Expected [      XXXX], got", result)
 	}
 }

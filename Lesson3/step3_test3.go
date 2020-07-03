@@ -14,6 +14,10 @@ type Battery struct {
 	capacity string
 }
 
+func (b Battery) String() string {
+	return b.capacity
+}
+
 func InterfaceWork2(capacityRaw string) string {
 	maker := func(cap string) string {
 		lenCap := len(cap)
@@ -26,12 +30,11 @@ func InterfaceWork2(capacityRaw string) string {
 		result := make([]rune, lenCap+2)
 		result[0] = '['
 		result[lenCap+1] = ']'
-		for i := 1; i < lenCap; i++ {
-			if i < counter {
+		for i := 1; i < lenCap+1; i++ {
+			if i <= lenCap-counter {
 				result[i] = ' '
-				break
 			} else {
-				result[i] = 58
+				result[i] = 'X'
 			}
 		}
 		return string(result)
