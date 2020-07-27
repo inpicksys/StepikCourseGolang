@@ -13,7 +13,5 @@ func Executor() {
 
 		InterfaceWork(0.0, 0.1, "+")
 	*/
-	var cap string
-	fmt.Scan(&cap)
-	fmt.Println(InterfaceWork2(cap))
+	fmt.Println(readFromStdinAndReturnSum())
 }
