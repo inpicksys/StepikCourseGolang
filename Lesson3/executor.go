@@ -1,17 +1,16 @@
 package Lesson3
 
-import "fmt"
+import (
+	"archive/zip"
+	"fmt"
+)
 
 func Executor() {
-	/*
-			reader := bufio.NewReader(os.Stdin)
-			str1, err := reader.ReadString('\n')
-			if err != nil && err != io.EOF {
-				panic(err)
-			}
-			fmt.Printf("%.4f", GetQuotient(&str1))
-
-		InterfaceWork(0.0, 0.1, "+")
-	*/
-	fmt.Println(readFromStdinAndReturnSum())
+	r, err := zip.OpenReader("task.zip")
+	if err != nil {
+		panic(err)
+	}
+	defer r.Close()
+	result := ZipWork(r)
+	fmt.Println(result)
 }
