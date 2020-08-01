@@ -1,16 +1,15 @@
 package Lesson3
 
 import (
-	"archive/zip"
 	"fmt"
+	"io/ioutil"
+	"os"
 )
 
 func Executor() {
-	r, err := zip.OpenReader("task.zip")
+	data, err := ioutil.ReadAll(os.Stdin)
 	if err != nil {
 		panic(err)
 	}
-	defer r.Close()
-	result := ZipWork(r)
-	fmt.Println(result)
+	fmt.Printf("%s", JSONWork(data))
 }
