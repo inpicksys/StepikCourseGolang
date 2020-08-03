@@ -2,14 +2,9 @@ package Lesson3
 
 import (
 	"fmt"
-	"io/ioutil"
-	"os"
 )
 
 func Executor() {
-	data, err := ioutil.ReadAll(os.Stdin)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Printf("%s", JSONWork(data))
+	dataSet := "../data-20190514T0100"
+	fmt.Println(EncodeFromFileDecodeToFileCountSumAllGlobalIDs(dataSet))
 }
