@@ -1,10 +1,9 @@
 package Lesson3
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func Executor() {
-	dataSet := "../data-20190514T0100"
-	fmt.Println(EncodeFromFileDecodeToFileCountSumAllGlobalIDs(dataSet))
+	stringToConvert := ""
+	fmt.Scan(&stringToConvert)
+	fmt.Println(RegisterBeforeLunch(&stringToConvert))
 }
