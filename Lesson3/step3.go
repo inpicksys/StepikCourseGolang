@@ -1,6 +1,38 @@
 package Lesson3
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
+
+// TODO Объявить функцию вида func(uint) uint, которую в дальнейшем можно будет вызвать по имени fn.
+//  Функция на вход получает целое положительное число (uint), возвращает число того же типа,
+//  в котором отсутствуют нечетные цифры или цифра 0; если же получившееся число равно 0, то
+//  возвращается число 100. Цифры в возвращаемом числе имеют тот же порядок, что и в исходном числе.
+func Caller(num uint) uint {
+	fn := func(src uint) uint {
+		result := ""
+		srcString := strconv.FormatUint(uint64(src), 10)
+		for _, r := range srcString {
+			val, err := strconv.Atoi(string(r))
+			if err != nil {
+				panic(err)
+			}
+			if val != 0 && val%2 == 0 {
+				result += string(val)
+			}
+		}
+		resultNum, err := strconv.Atoi(result)
+		if err != nil {
+			panic(err)
+		}
+		if resultNum > 0 {
+			return uint(resultNum)
+		}
+		return 100
+	}
+	return fn(num)
+}
 
 // TODO Обязательные условия выполнения: данные со стандартного ввода читаются функцией readTask(),
 //  которая возвращает 3 значения типа пустой интерфейс. Эта функция использует пакеты
@@ -43,4 +75,47 @@ func InterfaceWork(value1, value2, value3 interface{}) string {
 	default:
 		return fmt.Sprintf("неизвестная операция")
 	}
+}
+
+// TODO реализуем объект, удовлетворяющий интерфейсу fmt.Stringer. Назовем его "Батарейка".
+//  Во-первых, вы должны объявить новый тип, удовлетворяющий интерфейсу fmt.Stringer.
+//  Ваш тип должен предусматривать, что на печати он будет выглядеть так:
+//  [      XXXX]: где пробелы - "опустошенная" емкость батареи, а X - "заряженная".
+//  Во-вторых, на стандартный ввод вы получаете строку, состоящую ровно из 10 цифр:
+//  0 или 1 (порядок 0/1 случайный). Ваша задача считать эту строку любым возможным
+//  способом и создать на основе этой строки объект объявленного вами на первом этапе типа:
+//  надеюсь, вы понимаете, что строка символизирует емкость батарейки: 0 - это "опустошенная"
+//  часть, а 1 - "заряженная". В-третьих, созданный вами объект должен называться
+//  batteryForTest (использование этого имени обязательно).
+type Battery struct {
+	capacity string
+}
+
+func (b Battery) String() string {
+	return b.capacity
+}
+
+func InterfaceWork2(capacityRaw string) string {
+	maker := func(cap string) string {
+		lenCap := len(cap)
+		counter := 0
+		for _, i := range cap {
+			if i == 49 {
+				counter++
+			}
+		}
+		result := make([]rune, lenCap+2)
+		result[0] = '['
+		result[lenCap+1] = ']'
+		for i := 1; i < lenCap+1; i++ {
+			if i <= lenCap-counter {
+				result[i] = ' '
+			} else {
+				result[i] = 'X'
+			}
+		}
+		return string(result)
+	}
+	batteryForTest := Battery{maker(capacityRaw)}
+	return batteryForTest.capacity
 }

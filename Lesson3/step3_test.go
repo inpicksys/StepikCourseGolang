@@ -2,6 +2,13 @@ package Lesson3
 
 import "testing"
 
+func TestCaller(t *testing.T) {
+	result := Caller(727178)
+	if result != 28 {
+		t.Error("Wrong answer! Expected 28, got ", result)
+	}
+}
+
 func TestInterfaceWork(t *testing.T) {
 	value1, value2, value3 := 10.0, 2.0, "+"
 	result := InterfaceWork(value1, value2, value3)
@@ -39,5 +46,14 @@ func TestInterfaceWork(t *testing.T) {
 	result = InterfaceWork(value1, value2, value3Wrong)
 	if result != "неизвестная операция" {
 		t.Error("Wrong answer! Expected неизвестная операция, got ", result)
+	}
+}
+
+func TestInterfaceWork2(t *testing.T) {
+	// 	1000010011 -> [      XXXX]
+	cap := "1000010011"
+	result := InterfaceWork2(cap)
+	if result != "[      XXXX]" {
+		t.Error("Wrong answer! Expected [      XXXX], got", result)
 	}
 }
