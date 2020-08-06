@@ -72,6 +72,20 @@ func SimulateWork2() {
 // в один из каналов - получили значение, обработали его, завершили работу. После завершения работы необходимо
 // освободить ресурсы, закрыв выходной канал, если вы этого не сделаете, то превысите предельное время работы.
 //Won't be tested due to the realization details
-//func calculator(firstChan <-chan int, secondChan <-chan int, stopChan <-chan struct{}) <-chan int {
-//
-//}
+func calculator(firstChan <-chan int, secondChan <-chan int, stopChan <-chan struct{}) <-chan int {
+	result := make(chan int)
+	defer close(result)
+	go func() {
+		for {
+			select {
+			case data := <-firstChan:
+				result <- data * data
+			case data := <-secondChan:
+				result <- data * 3
+			case _ = <-stopChan:
+
+			}
+		}
+	}()
+	return result
+}
